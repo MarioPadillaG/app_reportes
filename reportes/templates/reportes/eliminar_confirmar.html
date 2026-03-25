@@ -1,0 +1,16 @@
+{% extends 'reportes/base.html' %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5 text-center">
+        <div class="card shadow p-4">
+            <h3 class="text-danger">¿Eliminar reporte?</h3>
+            <p>Se borrará definitivamente: <strong>{{ reporte.titulo }}</strong></p>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger px-4">Sí, eliminar</button>
+                <a href="{% url 'lista_reportes' %}" class="btn btn-secondary px-4">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
