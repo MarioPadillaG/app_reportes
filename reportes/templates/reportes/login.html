@@ -1,7 +1,7 @@
 {% extends 'reportes/base.html' %}
 
 {% block content %}
-<div class="row justify-content-center">
+<div class="row justify-content-center mt-5">
     <div class="col-md-4">
         <div class="card shadow border-0">
             <div class="card-header bg-dark text-white text-center py-3">
@@ -11,19 +11,22 @@
                 <form method="POST">
                     {% csrf_token %}
                     <div class="mb-3">
-                        <label class="form-label">Usuario</label>
-                        <input type="text" name="username" class="form-control" placeholder="Tu nombre de usuario" required>
+                        <label class="form-label fw-bold">Correo Electrónico</label>
+                        <input type="email" name="username" class="form-control" placeholder="tu@correo.com" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Contraseña</label>
+                        <label class="form-label fw-bold">Contraseña</label>
                         <input type="password" name="password" class="form-control" placeholder="********" required>
                     </div>
-                    <div class="d-grid">
+                    <div class="d-grid mt-4">
                         <button type="submit" class="btn btn-primary fw-bold">Entrar</button>
                     </div>
                 </form>
+
                 {% if form.errors %}
-                    <div class="alert alert-danger mt-3 small">Usuario o contraseña incorrectos.</div>
+                    <div class="alert alert-danger mt-3 small text-center">
+                        Correo o contraseña incorrectos.
+                    </div>
                 {% endif %}
                 <hr>
                 <div class="text-center">

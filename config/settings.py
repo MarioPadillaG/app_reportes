@@ -127,4 +127,10 @@ LOGIN_URL = '/reportes/login/'
 LOGIN_REDIRECT_URL = '/reportes/'
 LOGOUT_REDIRECT_URL = '/reportes/login/'
 
+# Al final de settings.py
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.AllowAllUsersModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 # Asegúrate de que en TEMPLATES esté configurado para buscar en las carpetas de las apps
